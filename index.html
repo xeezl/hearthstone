@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+	<div class="col-12 bg-warning enemy" style="height: 350px;">
+		<h1>Враг</h1>
+	</div>
+	<div class="col-12 bg-danger player" style="height: 350px;">
+		<h1>Игрок</h1>
+	</div>
+	  <script type="text/javascript">
+	  	let imgs = ['images/0.png','images/2.png','images/3.png','images/4.png','images/5.png','images/6.png','images/7.png','images/8.png','images/9.png','images/10.png']
+	  	let enemy = document.querySelector(".enemy")
+	  	let player = document.querySelector(".player")
+	 //randoms
+	    let getRandom = function(){
+	      let rng = Math.random()*4
+	      let round = Math.round(rng)
+	      return round
+	    }
+	    let randomImg = function(){
+	      let rand = Math.random()*10
+	      let round = Math.round(rand)
+	      return round
+	    }
+	    let enemyCards = function(){
+	      let rand = Math.random()*10
+	      let round = Math.round(rand)
+	      return round
+	    }
+	 //cards
+	   let enemycards = function(arg){
+	       for(let index = 0; index<arg; index = index + 1){
+		    let enemyCards = document.createElement("img")
+		    enemy.appendChild(enemyCards)
+		    enemyCards.src = imgs[randomImg()]
+		    enemyCards.style.width = "150px"
+		    enemyCards.style.height = "250px"   
+		   }
+	   }
+	   let playercards = function(arg){
+	   		for(let index = 0; index<arg; index = index + 1){
+		    let enemyCards = document.createElement("img")
+		    player.appendChild(enemyCards)
+		    enemyCards.src = imgs[randomImg()]
+		    enemyCards.style.width = "150px"
+		    enemyCards.style.height = "250px"
+		   }
+	   }
+	   enemycards(getRandom())
+	   playercards(getRandom())
+	  </script>
+  </body>
+</html>
